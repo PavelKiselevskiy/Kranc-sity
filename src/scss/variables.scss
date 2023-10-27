@@ -1,0 +1,56 @@
+:root {
+  // colors
+  --main-white-color:#F9F9F9;
+  --main-black-color: #0F0F0F;
+  --main-gradient: linear-gradient(133deg, #A8DBF0 -2.53%, #E5F6FD 71.15%);
+  --acent-color: #1D5685;
+
+  --main-btn-bg-color: #1D5685;
+  --main-btn-hover-bg-color: #326C9C; 
+  --main-btn-focus-bg-color: #326C9C;
+  // size
+  --second-title-fsz: 32px;
+  --third-title-fsz: 24px;
+  --descr-fsz: 20px;
+  --other-descr: 16px;
+  //gap
+  --nav-gap: 38px;
+  --section-gap-one: 70px;
+  --section-gap-two: 80px;
+  --card-gap: 20px;
+  --grid-gap: 20px;
+  }
+
+
+
+ 
+
+
+// reset style
+@mixin reset-style {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  color: inherit;
+  list-style: none;
+  border: none;
+  background-color: transparent;
+}
+
+
+@mixin img-reset {
+  display: block;
+  margin: 0;
+  max-width: 100%;
+}
+
+@mixin title-reset {
+  padding: 0;
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 20px;
+}

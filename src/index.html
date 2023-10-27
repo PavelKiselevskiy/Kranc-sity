@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Konstruct">
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="icon" href="@img/favicon.png" >
+  <script defer src="js/app.min.js"></script>
+  <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+  <title>Кранц-сити</title>
+</head>
+<body>
+  <header class="header">
+    <div class="header__container container">
+      <a href="#" class="header__logo-link">
+        <img class="header__logo-img" src="@img/header-logo.svg" alt="Логотип жилого комплекса Кранц-сити">
+      </a>
+      <nav class="header__nav">
+        <a href="#" class="header__logo-link-burger header__link">
+          <img class="header__logo-img-burger" src="@img/header-logo.svg" alt="Логотип жилого комплекса Кранц-сити">
+        </a>
+        <ul class="header__list">
+          <li class="header__item">
+            <a href="#" class="header__link">
+              выбор квартир
+            </a>
+          </li>
+          <li class="header__item">
+            <a href="#" class="header__link">
+              ход строительства
+            </a>
+          </li>
+          <li class="header__item">
+            <a href="#" class="header__link">
+              документы
+            </a>
+          </li>
+          <li class="header__item">
+            <a href="#" class="header__link">
+              ипотека и рассрочка
+            </a>
+          </li>
+          <li class="header__item">
+            <a href="#" class="header__link">
+              контакты
+            </a>
+          </li>
+          <li class="header__item">
+            <a href="tel:+74012270111" class="header__link">
+              +7 4012 270 111
+            </a>
+          </li>
+
+        </ul>
+        <p class="header__timetable">
+          Пн-Пт: 09.00 - 18.00 Сб-Вс: Выходной
+        </p>
+        <ul class="header__social-list">
+          <li class="header__social-item">
+            <a href="#" class="header__social-link header__link">
+              <img class="header__social-link-img" src="@img/vk-header.svg" alt="изображение ссылки на группу в социальной сети вконтакте">
+            </a>
+          </li>
+          <li class="header__social-item">
+            <a href="#" class="header__social-link header__link">
+              <img class="header__social-link-img" src="@img/telegram-header.svg" alt="изображение ссылки на группу в телеграм">
+            </a>
+          </li>
+          <li class="header__social-item">
+            <a href="#" class="header__social-link header__link">
+              <img class="header__social-link-img" src="@img/whatsapp-header.svg" alt="изображение ссылки на группу в вотсапп">
+            </a>
+          </li>
+          <li class="header__social-item">
+            <a href="#" class="header__social-link header__link">
+              <img class="header__social-link-img" src="@img/mail-header.svg" alt="изображение письма, ссылка на почтовый ящик">
+            </a>
+          </li>
+        </ul>
+
+      </nav>
+      <button class="header__burger">
+        <span class="header__burger-line"></span>
+        <span class="header__burger-line"></span>
+        <span class="header__burger-line"></span>
+      </button>
+    </div>
+  </header>
+  <main>
+    <section class="home">
+      <div class="home__container container">
+        <div class="home__left-panel">
+          <div class="home__content">
+            <h1 class="home__title main-title">
+              Жилой комплекс <b>&#8220;</b>Кранц-СИТИ<b>&#8221;</b>
+            </h1>
+            <h3 class="home__second-title third-title">
+              Квартиры у&nbsp;моря от 105&nbsp;000&nbsp;Р за&nbsp;м.кв
+            </h3>
+            <a href="#" class="home__btn main-btn">
+              Оставить заявку
+            </a>
+          </div>
+          <div class="home__mortgage">
+            <span class="home__percent">
+              3%
+            </span>
+            <h3 class="home__third-title">
+              Сельская ипотека
+            </h3>
+          </div>
+        </div>
+        <div class="home__right-panel">
+          <div class="home__decor-top">
+            <picture class="home__pic">
+              <source media="(max-width: 744px)" srcset="@img/home-top-768.png">
+              <img class="home__img" src="@img/home-top.png" alt=" фотография ЖК Кранц-сити">
+            </picture>
+            <div class="home__nameplate">
+              <h3 class="home__nameplate-title">
+                Девелопер проекта
+              </h3>
+              <a href="#" class="home__nameplate-link">
+                <img class="home__nameplate-link-img" src="@img/ogo-balt-parys.svg" alt="Логотип группы компаний Балтийский Парус">
+              </a>
+            </div>
+          </div>
+          <div class="home__decor-bottom">
+            <picture class="home__pic">
+              <source media="(max-width: 744px)" srcset="@img/home-bottom-768.png">
+              <img class="home__img" src="@img/home-bottom.png" alt=" фотография ЖК Кранц-сити">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="about">
+      <div class="about__container container">
+        <div class="about__left-content">
+          <p class="about__descr">
+            Жилой комплекс &#8243;Кранц-Сити&#8243; расположен в живописном уголке курортного Зеленоградска, в 10-15 минутах ходьбы от прекрасного Балтийского моря.
+          </p>
+        </div>
+        <div class="about__right-content">
+          <p class="about__descr">
+            Удобные подъездные пути, транспортная доступность центра города и&nbsp;Калининграда, закрытая территория, а&nbsp;также развивающаяся инфраструктура района, делают жилой комплекс &#8243;Кранц-Сити&#8243; очень удобным и&nbsp;привлекательным местом для проживания или проведения отпуска, а&nbsp;также выходных дней на&nbsp;лоне природы.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="advantages">
+      <div class="advantages__container container">
+        <h2 class="advantages__title second-title">
+          О жилом комплексе
+        </h2>
+        <ul class="advantages__list">
+          <li class="advantages__item">
+            <div class="advantages__card">
+              <img src="@img/advantages-1.svg" alt="" class="advantages__card-img">
+              <h3 class="advantages__card-title">
+                Курортный город Зеленоградск
+              </h3>
+            </div>
+          </li>
+          
+          <li class="advantages__item">
+            <div class="advantages__card advantages__card-2">
+              <img src="@img/advantages-2.svg" alt="" class="advantages__card-img">
+              <h3 class="advantages__card-title">
+                Кирпичные дома
+              </h3>
+            </div>
+          </li>
+          <li class="advantages__item">
+            <div class="advantages__card advantages__card-3">
+              <img src="@img/advantages-3.svg" alt="" class="advantages__card-img">
+              <h3 class="advantages__card-title">
+                Утепленные фасады
+              </h3>
+            </div>
+          </li>
+          <li class="advantages__item">
+            <div class="advantages__card advantages__card-4">
+              <img src="@img/advantages-4.svg" alt="" class="advantages__card-img">
+              <h3 class="advantages__card-title">
+                Панорамное остекление лоджии
+              </h3>
+            </div>
+          </li>
+          <li class="advantages__item">
+            <div class="advantages__card advantages__card-5">
+              <img src="@img/advantages-5.svg" alt="" class="advantages__card-img">
+              <h3 class="advantages__card-title">
+                Детские и спортивные площадки
+              </h3>
+            </div>
+          </li>
+          <li class="advantages__item">
+            <div class="advantages__card advantages__card-6">
+              <img src="@img/advantages-6.svg" alt="" class="advantages__card-img">
+              <h3 class="advantages__card-title">
+                Парковки
+              </h3>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="selection">
+      <div class="selection__container container">
+       <div class="selection__main-img">
+        <svg class="selection__svg" width="100%" height="100%" viewBox="0 0 1260 595" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <rect width="1260" height="595" rx="20" fill="url(#pattern0)"/>
+          <defs>
+          <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+          <use xlink:href="#image0_511_1351" transform="matrix(0.00025 0 0 0.000529412 0 -0.0625)"/>
+          </pattern>
+          <image id="image0_511_1351" width="4000" height="2125" xlink:href="@img/selection.png"/>
+          </defs>
+          <g style="mix-blend-mode:plus-lighter">
+            <path d="M678.98 359.333C681.401 348.842 668.136 345.378 661.201 344.958H660.353L659.55 293.437L397.277 238.475L235.712 205L228.979 215.099H227.344L226.286 216.831V219.909L212.715 240.682V272.915L207 281.869V313.948L375.979 348.867L477.988 370.051L628.291 401.826C639.992 405.659 650.063 400.229 653.635 397.034L678.98 359.333Z" fill="#0E4572"/>
+            </g>
+            <g style="mix-blend-mode:plus-lighter">
+            <path d="M208.136 287.72V338.232L226.792 342.198C229.912 343.215 230.183 346.238 229.929 347.623L198.395 394.586H203.481V392.89L265.787 392.127V386.787H289.607V384.837H291.302V394.416L354.117 393.907L354.541 392.382L416.508 391.703V385.939H419.39H440.243V383.82H442.193V391.703H504.923L505.689 445.147H519.281C522.82 445.147 524.616 447.506 525.072 448.686V499.677C524.686 503.216 521.499 504.086 519.953 504.079L149.088 506.027C134.778 507.897 126.255 502.402 123.781 499.421L95.426 445.962L77.5387 411.814C76.563 409.293 77.1322 408.189 77.5387 407.952L96.544 379.291V345.448L113.11 320.751H114.431L125.001 304.693V295.14L125.712 294.327L132.827 295.14V294.327L133.335 282.029L138.315 282.74L144.21 274L206.104 286.806L208.136 287.72Z" fill="#0E4572"/>
+            </g>
+            <path class="svg-compas" d="M1194.49 514.118C1194.49 532.847 1179.43 548.03 1160.85 548.03C1142.27 548.03 1127.2 532.847 1127.2 514.118C1127.2 495.388 1142.27 480.205 1160.85 480.205C1179.43 480.205 1194.49 495.388 1194.49 514.118ZM1131.89 514.118C1131.89 530.236 1144.86 543.303 1160.85 543.303C1176.84 543.303 1189.8 530.236 1189.8 514.118C1189.8 497.999 1176.84 484.932 1160.85 484.932C1144.86 484.932 1131.89 497.999 1131.89 514.118Z" fill="#F0F0F0"/>
+            <path class="svg-compas" d="M1167.85 507.053L1160.61 462.307L1153.49 507.053L1109.1 514.471L1145.54 518.004L1153.49 521.536L1160.61 565.811L1163.53 531.309L1167.85 521.536L1211.89 514.118L1201.38 513.293L1167.85 507.053Z" fill="black"/>
+            <path class="svg-compas" d="M1160.61 514.236V462.307L1153.37 504.227L1142.27 495.984L1150.33 507.641L1153.37 506.935L1160.61 514.236Z" fill="#F0F0F0"/>
+            <path class="svg-compas" d="M1160.61 514.118H1212.13L1170.54 506.817L1178.72 495.631L1167.15 503.756L1167.85 506.817L1160.61 514.118Z" fill="#F0F0F0"/>
+            <path class="svg-compas" d="M1160.61 514.236V566.164L1167.85 524.244L1178.95 532.487L1170.89 520.83L1167.85 521.536L1160.61 514.236Z" fill="#F0F0F0"/>
+            <path class="svg-compas" d="M1160.73 514.471H1109.21L1150.8 521.772L1142.62 532.958L1154.19 524.833L1153.49 521.772L1160.73 514.471Z" fill="#F0F0F0"/>
+            <path class="svg-compas" d="M1161.09 459.839C1160.1 459.839 1159.29 459.512 1158.64 458.859C1157.99 458.2 1157.67 457.387 1157.67 456.42C1157.67 455.452 1157.99 454.642 1158.64 453.989C1159.29 453.33 1160.1 453 1161.09 453C1161.68 453 1162.23 453.141 1162.72 453.424C1163.23 453.707 1163.62 454.09 1163.9 454.573L1162.97 455.12C1162.79 454.793 1162.54 454.535 1162.2 454.347C1161.87 454.152 1161.5 454.055 1161.09 454.055C1160.39 454.055 1159.82 454.278 1159.39 454.724C1158.96 455.17 1158.74 455.735 1158.74 456.42C1158.74 457.104 1158.96 457.669 1159.39 458.115C1159.82 458.561 1160.39 458.784 1161.09 458.784C1161.5 458.784 1161.87 458.69 1162.21 458.501C1162.55 458.307 1162.8 458.046 1162.97 457.719L1163.9 458.256C1163.63 458.74 1163.24 459.126 1162.73 459.415C1162.24 459.698 1161.69 459.839 1161.09 459.839Z" fill="#F0F0F0"/>
+            <path class="svg-compas" d="M1163.43 568.161C1164.38 568.161 1165.18 568.494 1165.84 569.16C1166.5 569.819 1166.83 570.626 1166.83 571.58C1166.83 572.535 1166.5 573.345 1165.84 574.011C1165.18 574.67 1164.38 575 1163.43 575C1162.57 575 1161.82 574.717 1161.19 574.152C1160.57 573.581 1160.21 572.865 1160.11 572.004H1159.07V574.878H1158V568.283H1159.07V570.968H1160.14C1160.27 570.158 1160.65 569.489 1161.26 568.962C1161.87 568.428 1162.6 568.161 1163.43 568.161ZM1161.78 573.276C1162.23 573.722 1162.78 573.945 1163.43 573.945C1164.09 573.945 1164.64 573.722 1165.08 573.276C1165.53 572.824 1165.75 572.259 1165.75 571.58C1165.75 570.902 1165.53 570.34 1165.08 569.894C1164.64 569.442 1164.09 569.216 1163.43 569.216C1162.77 569.216 1162.22 569.439 1161.78 569.885C1161.34 570.331 1161.12 570.896 1161.12 571.58C1161.12 572.259 1161.34 572.824 1161.78 573.276Z" fill="#F0F0F0"/>
+            <path class="svg-compas" d="M1219.08 513.995C1219.37 514.146 1219.6 514.353 1219.76 514.617C1219.92 514.881 1220 515.185 1220 515.531C1220 516.071 1219.81 516.52 1219.43 516.878C1219.05 517.236 1218.59 517.415 1218.04 517.415H1215.23V510.821H1217.83C1218.37 510.821 1218.82 510.997 1219.19 511.348C1219.56 511.694 1219.75 512.127 1219.75 512.648C1219.75 513.22 1219.53 513.669 1219.08 513.995ZM1217.83 511.838H1216.31V513.571H1217.83C1218.07 513.571 1218.27 513.49 1218.43 513.326C1218.59 513.157 1218.67 512.95 1218.67 512.705C1218.67 512.46 1218.59 512.256 1218.43 512.092C1218.27 511.923 1218.07 511.838 1217.83 511.838ZM1218.04 516.397C1218.29 516.397 1218.5 516.31 1218.66 516.134C1218.84 515.952 1218.93 515.732 1218.93 515.474C1218.93 515.217 1218.84 515 1218.66 514.824C1218.5 514.642 1218.29 514.551 1218.04 514.551H1216.31V516.397H1218.04Z" fill="#F0F0F0"/>
+            <path class="svg-compas" d="M1105.72 513.995C1106.39 514.316 1106.72 514.846 1106.72 515.587C1106.72 516.165 1106.5 516.636 1106.07 517C1105.64 517.358 1105.07 517.537 1104.37 517.537C1103.18 517.537 1102.39 517.029 1102 516.011L1102.93 515.474C1103.12 516.171 1103.6 516.52 1104.37 516.52C1104.78 516.52 1105.1 516.432 1105.32 516.256C1105.54 516.074 1105.64 515.832 1105.64 515.531C1105.64 515.236 1105.54 515 1105.33 514.824C1105.12 514.642 1104.83 514.551 1104.45 514.551H1103.65V513.571H1104.23C1104.6 513.571 1104.89 513.487 1105.09 513.317C1105.3 513.147 1105.4 512.921 1105.4 512.639C1105.4 512.356 1105.31 512.133 1105.12 511.97C1104.93 511.8 1104.67 511.716 1104.32 511.716C1103.67 511.716 1103.23 512.014 1103.01 512.611L1102.09 512.074C1102.52 511.157 1103.26 510.698 1104.32 510.698C1104.96 510.698 1105.48 510.874 1105.88 511.226C1106.28 511.571 1106.48 512.023 1106.48 512.582C1106.48 513.204 1106.22 513.675 1105.72 513.995Z" fill="#F0F0F0"/>
+          
+          </svg> 
+       </div>
+      </div>
+    </section>
+    <section class="attractions">
+      <div class="attractions__container container">
+        <div class="attractions__contents">
+          <h2 class="attractions__title second-title">
+            О расположении и Зеленоградске
+          </h2>
+          <a class="attractions__link" href="#">
+            <img class="attractions__img" src="@img/attractions-panorama-img.png" alt="Изображение панорамы Зеленоградска">
+          </a>
+          <p class="attractions__descr">
+            Город предлагает прекрасное местоположение, позволяющее наслаждаться живописной природой и&nbsp;пляжами. Город также известен своим историческим наследием и&nbsp;архитектурой в&nbsp;стиле балтийской готики, что создает уникальную атмосферу.
+          </p>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+        <div class="attractions__slider">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img class="attractions__slide-img" src="@img/slide-1.png" alt="">
+              </div>
+              <div class="swiper-slide">  
+                <img class="attractions__slide-img" src="@img/slide-1.png" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img class="attractions__slide-img" src="@img/slide-1.png" alt="">
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bonus">
+      <div class="container bonus__container">
+        <picture>
+          <source media="(max-width: 744px)" srcset="@img/bonus-img-744.png">
+          <img class="bonus__img" src="@img/bonus-img.png" alt="изображение интерьера">
+        </picture>
+        
+        <h2 class="bonus__title">
+          Своя квартира на&nbsp;берегу балтийского моря за 18&nbsp;000 рублей в&nbsp;месяц!
+        </h2>
+        <a class="bonus__btn main-btn">
+          Оставить заявку
+        </a>
+      </div>
+    </section>
+    <section class="maps">
+      <div class="container maps__container">
+        <iframe class="maps__map" src="https://yandex.ru/map-widget/v1/?um=constructor%3Af9d712aca53cc992980c3e7cca803268cfc120cb2d6c5593d58c402ccabe33f5&amp;source=constructor" width="transparant" height="transparant" frameborder="0"></iframe>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer__container">
+      <div class="footer__area">
+        <div class="footer__left-panel">
+        </div>
+        <div class="footer__right-panel">
+          <h2 class="footer__title second-title">
+            Запишитесь на просмотр
+          </h2>
+          <p class="footer__descr">
+            Оставьте свои данные и мы с вами свяжемся для назначения даты и времени просмотра
+          </p>
+          <form class="footer__form">
+              <input class="footer__input" id="basic_name" type="text" placeholder="Имя*" required data-validate-field="name">
+              <input class="footer__input" id="basic_tel" type="tel" placeholder="Номер телефона*" required data-validate-field="phone">
+            <div class="footer__form-buttom-panel" > 
+              <input class="footer__input footer__bottom-input" type="text" placeholder="Комментарий">
+              <button class="footer__form-btn second-btn" type="submit" aria-label="Отправка формы для записи на просмотр">
+                Отправить
+              </button>
+            </div>
+          </form>
+          <span class="footer__form-policy">
+            Нажимая на кнопку вы соглашаетесь с нашей политикой конфиденциальности
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="container copy__container">
+      <div class="copy__area">
+        <div class="copy__left-panel">
+        </div>
+        <div class="copy__right-panel">
+          <ul class="copy__list">
+            <li class="copy__item">
+              <a href="#" class="copy__link">
+                <img class="copy__link-img" src="@img/vk.svg" alt="изображение ссылки на группу в социальной сети вконтакте">
+              </a>
+            </li>
+            <li class="copy__item">
+              <a href="#" class="copy__link">
+                <img class="copy__link-img" src="@img/telegram.svg" alt="изображение ссылки на группу в телеграм">
+              </a>
+            </li>
+            <li class="copy__item">
+              <a href="#" class="copy__link">
+                <img class="copy__link-img" src="@img/whatsapp.svg" alt="изображение ссылки на группу в вотсапп">
+              </a>
+            </li>
+            <li class="copy__item">
+              <a href="#" class="copy__link">
+                <img class="copy__link-img" src="@img/mail.svg" alt="изображение письма, ссылка на почтовый ящик">
+              </a>
+            </li>
+            <li class="copy__item">
+              <a href="#" class="copy__link">
+               
+                <img class="copy__link-img" src="@img/ardema-logo.svg" alt="логотип компании Ардема, ссылки на сайт разработчиков сайта">
+              </a>
+            </li>
+          </ul>
+          <span class="copy__years">
+            2023<sup>&copy;</sup>
+          </span>
+        </div>
+      </div>
+    </div>
+    <picture class="footer__pic">
+      <source media="(max-width: 768px)" srcset="@img/footer-cat-744.png">
+      <source media="(max-width: 1024px)" srcset="@img/footer-cat-1024.png">
+      <img class="footer__img" src="@img/footer-cat.png" alt="Изображение красивого котика">
+    </picture>
+  </footer>
+  <div id="overlay"></div>
+</body>
+</html>
