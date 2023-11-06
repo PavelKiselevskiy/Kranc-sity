@@ -292,6 +292,7 @@ function openCatalog() {
   //   gg.style.left = e.x - posX + 230 + 'px';
   //   gg.style.top = e.y - posY - 10 + 'px';
   // };
+  
 
   // function itemOnMouseOutHandler (){
   //   document.querySelector('.selection__tooltip-1').classList.remove('tooltip-active');
@@ -301,7 +302,7 @@ function openCatalog() {
   // houseOne.addEventListener('mousemove', itemOnMouseMoveHandler);
   // houseOne.addEventListener('mouseout', itemOnMouseOutHandler);
 
-  // // выбор второго дома
+  
 
   // function itemOnMouseOverHandlers () {
   //   let gg = document.querySelector('.selection__tooltip-2');
@@ -317,7 +318,7 @@ function openCatalog() {
   //   gg.style.top = e.y - posY + 20 + 'px';
   // };
 
-  // function itemOnMouseOutHandlers (){
+  // function itemOnMouseOutHandlers () {
   //   document.querySelector('.selection__tooltip-2').classList.remove('tooltip-active');
   // };
 
@@ -326,7 +327,160 @@ function openCatalog() {
   // houseTwo.addEventListener('mouseout', itemOnMouseOutHandlers);
 
 
+  // logic apartments
 
 
+  const infelicity = 80;
+  let filter_room = "1";
+  let filter_floor;
+
+  const hoverApart = () => {
+    const paths_wrap = document.querySelector('.js-for-floor');
+    if(!paths_wrap) return;
+
+    const divs_wrap = document.querySelector('.js-hover-path');
+    const divs = divs_wrap.querySelectorAll('.hover-path');
+
+    const paths = paths_wrap.querySelectorAll('.apartments__svg-floor');
+    paths.forEach(path => {
+      const floor = path.getAttribute('data-floor');
+
+      path.addEventListener('mousemove', (event) => {
+        const x = event.pageX;
+        const y = event.pageY;
+
+        divs.forEach(d => {
+          if(d.getAttribute('data-floor') === floor) {
+            d.style.left = x - infelicity - 140 + 'px';
+            d.style.top = y - infelicity - 90  + 'px';
+          }
+        })
+      })
+
+      path.addEventListener('mouseover', (event) => {
+        divs.forEach(d => {
+          if(d.getAttribute('data-floor') === floor) {
+            d.classList.add('hover-path_hover');
+          }
+        })
+      })
+
+      path.addEventListener('mouseleave', () => {
+        divs.forEach(d => d.classList.remove('hover-path_hover') )
+      })
+
+      path.addEventListener('click', () => {
+        paths.forEach(p => p.classList.remove('active'))
+        path.classList.add('active');
+        clickApart(floor)
+      })
+    })
+  }
+
+  const hoverFloor = () => {
+    const paths_wrap = document.querySelector('.js-img-floor');
+    if(!paths_wrap) return;
+
+    const divs_wrap = document.querySelector('.js-hover-path_floor');
+    const divs = divs_wrap.querySelectorAll('.hover-path');
+
+    const paths = paths_wrap.querySelectorAll('.floor__svg');
+    paths.forEach(path => {
+      const apart = path.getAttribute('data-numbers-apartments');
+      const sale = path.getAttribute('data-sale');
+
+      if(sale === '1') {
+        path.classList.add('reservation')
+      }
+
+      if(sale === '2') {
+        path.classList.add('sold')
+      }
+
+      if(sale === '0') {
+        path.classList.add('free')
+      }
+
+      if(sale === '0') {
+        path.addEventListener('mousemove', (event) => {
+          const x = event.pageX;
+          const y = event.pageY;
+
+          divs.forEach(d => {
+            if(d.getAttribute('data-numbers-apartments') === apart) {
+              d.style.left = x - infelicity + 'px';
+              d.style.top = y - infelicity + 'px';
+            }
+          })
+        })
+
+        path.addEventListener('mouseover', (event) => {
+          divs.forEach(d => {
+            if(d.getAttribute('data-numbers-apartments') === apart) {
+              d.classList.add('hover-path_hover');
+            }
+          })
+        })
+
+        path.addEventListener('mouseleave', () => {
+          divs.forEach(d => d.classList.remove('hover-path_hover') )
+        })
+      }
+    })
+  }
+
+  const floor_wrap = document.querySelector('.js-img-floor');
+  if(!floor_wrap) return;
+
+  const img_floor = floor_wrap.querySelectorAll('.floor__floors');
+
+  const filter = document.querySelector('.js-filter');
+
+  const cards_area = document.querySelectorAll('.card-area__item');
+
+  const btn_floor = filter.querySelectorAll('.js-filter__floor');
+  const btn_area = filter.querySelectorAll('.js-filter__area');
+
+  const clickApart = (floor) => {
+    filter_floor = floor;
+    btn_floor.forEach(f => f.innerHTML.trim() === floor ? f.classList.add('filter__btn-active') : f.classList.remove('filter__btn-active'))
+    filter.style.display = "block";
+    cards_area.forEach(card => card.getAttribute('data-floor') === floor ? card.classList.remove('hidden') : card.classList.add('hidden'))
+    img_floor.forEach(img => img.getAttribute('data-floor') === floor ? img.style.display = "block" : img.style.display = "none")
+  }
+
+  btn_floor.forEach(b => {
+    b.addEventListener('click', (ev) => {
+      filter_floor = ev.target.innerHTML.trim();
+      btn_floor.forEach(f => f.classList.remove('filter__btn-active'));
+      b.classList.add('filter__btn-active');
+
+      cards_area.forEach(card => {
+        if(card.getAttribute('data-floor') === filter_floor && card.getAttribute('data-room') === filter_room) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      })
+    })
+  })
+
+  btn_area.forEach(b => {
+    b.addEventListener('click', (ev) => {
+      filter_room = ev.target.innerHTML.trim();
+      btn_area.forEach(f => f.classList.remove('filter__btn-active'));
+      b.classList.add('filter__btn-active');
+
+      cards_area.forEach(card => {
+        if(card.getAttribute('data-room') === filter_room && card.getAttribute('data-floor') === filter_floor) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      })
+    })
+  })
+
+  hoverApart()
+  hoverFloor()
 });
-

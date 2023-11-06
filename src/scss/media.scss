@@ -11,6 +11,14 @@
     }
   }
 
+  .card-area {
+    &__list {
+      grid-template-columns: repeat(3, 1.5fr);
+      grid-template-rows: minmax(300px, auto);
+      grid-auto-rows: minmax(300px, auto);
+    }
+  }
+
 
 }
 
@@ -278,6 +286,74 @@
     top: -56px;
   }
 
+
+  // house-one
+
+  .apartments {
+    &__nameplate {
+      padding: 15px;
+      min-height: 30px;
+    }
+
+    &__nameplate-title {
+      font-size: 14px;
+    }
+
+    &__nameplate-list {
+      min-width: 150px;
+    }
+
+    &__hot {
+      min-width: 226px;
+      padding: 10px;
+    }
+
+    &__hot-title {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    &__hot-img {
+      max-width: 48px;
+      max-height: 48px;
+    }
+  }
+
+  .card-area {
+    &__list {
+      grid-template-columns: repeat(3, minmax(200px, 2fr));
+      grid-template-rows: minmax(200px, auto);
+      grid-auto-rows: minmax(300px, auto);
+      gap: 10px;
+    }
+  }
+
+  .floor {
+    &__floors {
+      display: none;
+    }
+  }
+
+  .card {
+    gap: 10px;
+
+    &__item {
+      padding: 10px;
+    }
+    
+    &__img {
+      min-width: 120px;
+      max-width: 200px;
+      min-height: 100px;
+      max-height: 140px;
+      margin-bottom: auto;
+    }
+
+    &__descr {
+      font-size: 11px;
+    }
+
+  }
 }
 
 @media (max-width: 744px) {
@@ -762,6 +838,16 @@
     }
 
   }
+
+  .apartments {
+    &__nameplate {
+      display: none;
+    }
+
+    &__hot {
+      display: none;
+    }
+  }
   
 
 
@@ -834,6 +920,17 @@
   .header-404 {
     margin-bottom: 100px;
   }
+
+  .card-area {
+    &__list {
+      grid-template-columns: repeat(2, minmax(200px, 2fr));
+      grid-template-rows: minmax(200px, auto);
+      grid-auto-rows: minmax(300px, auto);
+      gap: 10px;
+    }
+  }
+
+
 }
 
 @media (max-width: 540px) {
@@ -1042,6 +1139,41 @@
     top: -41px;
     display: block;
   }
+
+  .apartments {
+    &__nameplate {
+      display: none;
+    }
+
+    &__hot {
+      display: none;
+    }
+  }
+
+  .card-area {
+    &__list {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: minmax(490px, auto);
+      grid-auto-rows: minmax(490px, auto);
+      gap: 20px;
+    }
+  }
+
+  .card {
+    &__img {
+      min-width: auto;
+      min-height: auto;
+      max-width: fit-content;
+      max-height: fit-content;
+      width: 310px;
+      height: 305px;
+    }
+
+    &__descr {
+      font-size: 16px;
+    }
+  }
+
 }
 
 @media (max-width: 415px) {
@@ -1250,6 +1382,28 @@
 
 .swiper-pagination {
   display: none;
+}
+
+.filter {
+  &__area {
+    flex-wrap: wrap;
+  }
+}
+
+.card {
+  &__img {
+    width: 100%;
+    height: 100%;
+    min-width: 250px;
+    max-width: 305px;
+    min-height: 210px;
+    max-height: 305px;
+  }
+}
+
+.js-for-floor {
+  width: 100%;
+  border-radius: 15px;
 }
 
 }
