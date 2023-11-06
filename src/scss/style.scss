@@ -1607,7 +1607,8 @@ body {
   position: relative;
 }
 
-.js-hover-path {
+.js-hover-path,
+.js-hover-path_floor {
   position: absolute;
   top: 0;
   left: 0;
@@ -1633,6 +1634,28 @@ body {
 
     &.active {
       display: block;
+    }
+  }
+}
+
+.floor__svg {
+  &.sold {
+    color: #1D5685;
+    opacity: 0.8;
+  }
+
+  &.reservation {
+    color: #1D5685;
+    opacity: 0.8;
+  }
+
+  &.free {
+    color: #1D5685;
+    opacity: 0;
+    mix-blend-mode: plus-lighter;
+
+    &:hover {
+      opacity: 1;
     }
   }
 }
