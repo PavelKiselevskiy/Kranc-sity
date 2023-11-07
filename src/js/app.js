@@ -373,54 +373,56 @@ function openCatalog() {
   }
 
   const hoverFloor = () => {
-    const paths_wrap = document.querySelector('.js-img-floor');
-    if(!paths_wrap) return;
+    const paths_wrap = document.querySelectorAll('.js-svg-floor');
+    if(!paths_wrap.length) return;
 
-    const divs_wrap = document.querySelector('.js-hover-path_floor');
-    const divs = divs_wrap.querySelectorAll('.hover-path');
+    paths_wrap.forEach(path_wrap => {
+      const divs_wrap = path_wrap.querySelector('.js-hover-path_floor');
+      const divs = divs_wrap.querySelectorAll('.hover-path');
 
-    const paths = paths_wrap.querySelectorAll('.floor__svg');
-    paths.forEach(path => {
-      const apart = path.getAttribute('data-numbers-apartments');
-      const sale = path.getAttribute('data-sale');
+      const paths = path_wrap.querySelectorAll('.floor__svg');
+      paths.forEach(path => {
+        const apart = path.getAttribute('data-numbers-apartments');
+        const sale = path.getAttribute('data-sale');
 
-      if(sale === '1') {
-        path.classList.add('reservation')
-      }
+        if(sale === '1') {
+          path.classList.add('reservation')
+        }
 
-      if(sale === '2') {
-        path.classList.add('sold')
-      }
+        if(sale === '2') {
+          path.classList.add('sold')
+        }
 
-      if(sale === '0') {
-        path.classList.add('free')
-      }
+        if(sale === '0') {
+          path.classList.add('free')
+        }
 
-      if(sale === '0') {
-        path.addEventListener('mousemove', (event) => {
-          const x = event.pageX;
-          const y = event.pageY;
+        if(sale === '0') {
+          path.addEventListener('mousemove', (event) => {
+            const x = event.pageX;
+            const y = event.pageY;
 
-          divs.forEach(d => {
-            if(d.getAttribute('data-numbers-apartments') === apart) {
-              d.style.left = x - infelicity + 'px';
-              d.style.top = y - infelicity + 'px';
-            }
+            divs.forEach(d => {
+              if(d.getAttribute('data-numbers-apartments') === apart) {
+                d.style.left = x - infelicity + 'px';
+                d.style.top = y - infelicity + 'px';
+              }
+            })
           })
-        })
 
-        path.addEventListener('mouseover', (event) => {
-          divs.forEach(d => {
-            if(d.getAttribute('data-numbers-apartments') === apart) {
-              d.classList.add('hover-path_hover');
-            }
+          path.addEventListener('mouseover', (event) => {
+            divs.forEach(d => {
+              if(d.getAttribute('data-numbers-apartments') === apart) {
+                d.classList.add('hover-path_hover');
+              }
+            })
           })
-        })
 
-        path.addEventListener('mouseleave', () => {
-          divs.forEach(d => d.classList.remove('hover-path_hover') )
-        })
-      }
+          path.addEventListener('mouseleave', () => {
+            divs.forEach(d => d.classList.remove('hover-path_hover') )
+          })
+        }
+      })
     })
   }
 
@@ -433,6 +435,8 @@ function openCatalog() {
 
   const cards_area = document.querySelectorAll('.card-area__item');
 
+  cards_area.forEach(card => card.getAttribute('data-sale') !== "0" ? card.classList.add('hidden') : '')
+
   const btn_floor = filter.querySelectorAll('.js-filter__floor');
   const btn_area = filter.querySelectorAll('.js-filter__area');
 
@@ -440,7 +444,7 @@ function openCatalog() {
     filter_floor = floor;
     btn_floor.forEach(f => f.innerHTML.trim() === floor ? f.classList.add('filter__btn-active') : f.classList.remove('filter__btn-active'))
     filter.style.display = "block";
-    cards_area.forEach(card => card.getAttribute('data-floor') === floor ? card.classList.remove('hidden') : card.classList.add('hidden'))
+    cards_area.forEach(card => card.getAttribute('data-sale') === "0" && card.getAttribute('data-floor') === floor ? (card.classList.remove('hidden')) : (card.classList.add('hidden')))
     img_floor.forEach(img => img.getAttribute('data-floor') === floor ? img.style.display = "block" : img.style.display = "none")
   }
 
@@ -450,11 +454,17 @@ function openCatalog() {
       btn_floor.forEach(f => f.classList.remove('filter__btn-active'));
       b.classList.add('filter__btn-active');
 
+      const paths_wrap = document.querySelector('.js-for-floor');
+      const paths = paths_wrap.querySelectorAll('.apartments__svg-floor');
+
+      paths.forEach(d => d.getAttribute('data-floor') === filter_floor ? d.classList.add('active') : d.classList.remove('active'))
       cards_area.forEach(card => {
-        if(card.getAttribute('data-floor') === filter_floor && card.getAttribute('data-room') === filter_room) {
-          card.classList.remove('hidden');
-        } else {
-          card.classList.add('hidden');
+        if(card.getAttribute('data-sale') === "0") {
+          if(card.getAttribute('data-floor') === filter_floor && card.getAttribute('data-room') === filter_room) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
         }
       })
     })
