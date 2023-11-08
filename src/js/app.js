@@ -457,6 +457,8 @@ function openCatalog() {
       const paths_wrap = document.querySelector('.js-for-floor');
       const paths = paths_wrap.querySelectorAll('.apartments__svg-floor');
 
+      img_floor.forEach(img => img.getAttribute('data-floor') === filter_floor ? img.style.display = "block" : img.style.display = "none")
+
       paths.forEach(d => d.getAttribute('data-floor') === filter_floor ? d.classList.add('active') : d.classList.remove('active'))
       cards_area.forEach(card => {
         if(card.getAttribute('data-sale') === "0") {
